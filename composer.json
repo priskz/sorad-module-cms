@@ -1,0 +1,28 @@
+{
+    "name": "priskz/sorad-module-cms",
+    "description": "A SORAD module for Content Management System.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "Zachary Prisk",
+          "email": "zachary.prisk@gmail.com"
+        }
+    ],
+    "require": {
+        "priskz/payload": "~0.0.1",
+        "priskz/sorad-api": "~0.0.1",
+        "priskz/sorad-routes": "~0.0.1",
+        "priskz/sorad-service-provider": "~0.0.1",
+        "priskz/sorad-service": "~0.0.1",
+        "priskz/paylorm": "~0.0.1",
+        "priskz/sorad-entity": "~0.0.1",
+        "priskz/laravel-utilities": "~0.0.1",
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Priskz\\SORAD\\CMS\\": "src/Priskz/SORAD/CMS"
+        }
+    }
+}
