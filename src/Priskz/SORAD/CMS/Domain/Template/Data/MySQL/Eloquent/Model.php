@@ -218,7 +218,7 @@ class Model extends DataModel
 	*/
 	public function getParent()
 	{
-		if ($this->getParentKey() !== null)
+		if($this->getParentKey() !== null)
 		{
 			return $this->parent;
 		}
