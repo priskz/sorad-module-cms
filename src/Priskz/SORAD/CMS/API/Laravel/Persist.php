@@ -1,6 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\API\Laravel;
 
-use Alert, Redirect;
+use Redirect;
 use Priskz\SORAD\CMS\API\Laravel\Persist\Action;
 use Priskz\SORAD\Responder\Laravel\AbstractGenericResponder as Responder;
 
@@ -21,12 +21,12 @@ class Persist extends Responder
 	{
 		if($payload->getStatus() != 'updated')
 		{
-			Alert::danger('Could not persist.');
+			dd('Could not persist.');
 
 			return Redirect::back();
 		}
 
-		Alert::success('Successfully persisted!');
+		dd('Successfully persisted!');
 
 		return Redirect::back();
 	}

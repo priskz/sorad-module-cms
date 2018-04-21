@@ -1,6 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\API\Laravel;
 
-use Alert, Redirect;
+use Redirect;
 use Priskz\SORAD\CMS\API\Laravel\Purge\Action;
 use Priskz\SORAD\Responder\Laravel\AbstractGenericResponder as Responder;
 
@@ -21,12 +21,12 @@ class Purge extends Responder
 	{
 		if($payload->getStatus() != 'purged')
 		{
-			Alert::danger('Could not purge.');
+			dd('Could not purge.');
 
 			return Redirect::back();
 		}
 
-		Alert::success('Successfully purged.');
+		dd('Successfully purged.');
 
 		return Redirect::back();
 	}

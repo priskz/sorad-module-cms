@@ -1,6 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\API\Laravel;
 
-use Alert, Redirect;
+use Redirect;
 use Priskz\SORAD\CMS\API\Laravel\Reference\Action;
 use Priskz\SORAD\Responder\Laravel\AbstractGenericResponder as Responder;
 
@@ -21,7 +21,7 @@ class Reference extends Responder
 	{
 		if($payload->getStatus() != 'created')
 		{
-			Alert::danger('Could not create reference!');
+			dd('Could not create reference!');
 
 			return Redirect::back();
 		}

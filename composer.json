@@ -17,7 +17,6 @@
         "priskz/sorad-service": "~0.0.1",
         "priskz/paylorm": "~0.0.1",
         "priskz/sorad-entity": "~0.0.1",
-        "priskz/laravel-utilities": "~0.0.1",
         "php": ">=5.4.0"
     },
     "autoload": {

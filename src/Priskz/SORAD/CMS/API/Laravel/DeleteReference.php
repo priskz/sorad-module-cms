@@ -1,6 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\API\Laravel;
 
-use Alert, Redirect;
+use Redirect;
 use Priskz\SORAD\CMS\API\Laravel\DeleteReference\Action;
 use Priskz\SORAD\Responder\Laravel\AbstractGenericResponder as Responder;
 
@@ -21,7 +21,7 @@ class DeleteReference extends Responder
 	{
 		if($payload->getStatus() != 'deleted')
 		{
-			Alert::danger('Could not delete reference.');
+			dd('Could not delete reference.');
 
 			return Redirect::back();
 		}

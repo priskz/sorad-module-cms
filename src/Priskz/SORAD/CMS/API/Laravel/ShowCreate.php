@@ -1,6 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\API\Laravel;
 
-use Alert, Config, Redirect, View;
+use Config, Redirect, View;
 use Priskz\SORAD\CMS\API\Laravel\ShowCreate\Action;
 use Priskz\SORAD\Responder\Laravel\AbstractGenericResponder as Responder;
 
@@ -21,7 +21,7 @@ class ShowCreate extends Responder
 	{
 		if($payload->getStatus() != 'found')
 		{
-			Alert::danger('Could not find any templates.');
+			dd('Could not find any templates.');
 
 			return Redirect::back();
 		}

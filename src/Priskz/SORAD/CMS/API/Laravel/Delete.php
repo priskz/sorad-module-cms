@@ -1,6 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\API\Laravel;
 
-use Alert, Redirect;
+use Redirect;
 use Priskz\SORAD\CMS\API\Laravel\Delete\Action;
 use Priskz\SORAD\Responder\Laravel\AbstractGenericResponder as Responder;
 
@@ -21,12 +21,12 @@ class Delete extends Responder
 	{
 		if($payload->getStatus() != 'deleted')
 		{
-			Alert::danger('Could not delete.');
+			dd('Could not delete.');
 
 			return Redirect::back();
 		}
 
-		Alert::success('Successfully deleted.');
+		dd('Successfully deleted.');
 
 		return Redirect::back();
 	}

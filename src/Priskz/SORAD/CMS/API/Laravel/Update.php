@@ -1,6 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\API\Laravel;
 
-use Alert, Redirect;
+use Redirect;
 use Priskz\SORAD\CMS\API\Laravel\Update\Action;
 use Priskz\SORAD\Responder\Laravel\AbstractGenericResponder as Responder;
 
@@ -21,7 +21,7 @@ class Update extends Responder
 	{
 		if($payload->getStatus() != 'updated')
 		{
-			Alert::danger('Could not update content, try again.');
+			dd('Could not update content, try again.');
 
 			return Redirect::back();
 		}

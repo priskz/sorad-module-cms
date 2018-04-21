@@ -1,6 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\API\Laravel;
 
-use Alert, Redirect;
+use Redirect;
 use Priskz\SORAD\CMS\API\Laravel\Store\Action;
 use Priskz\SORAD\Responder\Laravel\AbstractGenericResponder as Responder;
 
@@ -21,12 +21,12 @@ class Store extends Responder
 	{
 		if($payload->getStatus() != 'created')
 		{
-			Alert::danger('Could not create content.');
+			dd('Could not create content.');
 
 			return Redirect::back();
 		}
 
-		Alert::success('Successfully created.');
+		dd('Successfully created.');
 
 		return Redirect::route('content.edit', ['api_context' => $this->getApiContext(), 'uuid' => $payload->getData()->first()->getUuid()]);
 	}

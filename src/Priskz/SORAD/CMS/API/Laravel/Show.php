@@ -1,6 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\API\Laravel;
 
-use Alert, Config, Redirect, View;
+use Config, Redirect, View;
 use Priskz\SORAD\CMS\API\Laravel\Show\Action;
 use Priskz\SORAD\Responder\Laravel\AbstractGenericResponder as Responder;
 
@@ -21,7 +21,7 @@ class Show extends Responder
 	{
 		if($payload->getStatus() != 'found')
 		{
-			Alert::danger('Could not find content.');
+			dd('Could not find content.');
 
 			return Redirect::back();
 		}
