@@ -1,5 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\Service\Root;
 
+use Priskz\Payload\Payload;
 use Priskz\SORAD\Service\Laravel\GenericEntityService;
 
 class Service extends GenericEntityService
@@ -72,7 +73,7 @@ class Service extends GenericEntityService
 		// Process the given data.
 		$processPayload = $this->process('FIND_TEMPLATE', $data);
 
-		if($processPayload->getStatus() != 'valid')
+		if( ! $processPayload->isStatus(Payload::STATUS_VALID))
 		{
 			return $processPayload;
 		}

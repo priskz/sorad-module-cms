@@ -24,7 +24,7 @@ class Processor extends LaravelProcessor
 		$this->errorPayload = $this->validator->validate($sanintizedData, $rules);
 
 		// Return sanitized data if no validation errors exist.
-		if($this->errorPayload->getStatus() != 'valid')
+		if( ! $this->errorPayload->isStatus(Payload::STATUS_VALID))
 		{
 			return $this->errorPayload;
 		}

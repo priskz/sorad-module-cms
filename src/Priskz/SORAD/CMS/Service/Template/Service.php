@@ -1,5 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\Service\Template;
 
+use Priskz\Payload\Payload;
 use Priskz\SORAD\Service\Laravel\GenericCrudService;
 
 class Service extends GenericCrudService
@@ -68,7 +69,7 @@ class Service extends GenericCrudService
 		// Process data given.
 		$processPayload = $this->process(__FUNCTION__, $data);
 
-		if($processPayload->getStatus() != 'valid')
+		if( ! $processPayload->isStatus(Payload::STATUS_VALID))
 		{
 			return $processPayload;
 		}

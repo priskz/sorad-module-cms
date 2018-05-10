@@ -1,5 +1,6 @@
 <?php namespace Priskz\SORAD\CMS\Service\Content\Processor;
 
+use Priskz\Payload\Payload;
 use Priskz\SORAD\Service\Processor\Laravel\Processor as LaravelProcessor;
 
 class Standard extends LaravelProcessor
@@ -25,7 +26,7 @@ class Standard extends LaravelProcessor
 		$validateContextPayload = $this->validateContext($processData, $rules);
 
 		// Return sanitized data if no validation errors exist.
-		if($validateContextPayload->getStatus() != 'valid')
+		if( ! $validateContextPayload->isStatus(Payload::STATUS_VALID))
 		{
 			return $validateContextPayload;
 		}
