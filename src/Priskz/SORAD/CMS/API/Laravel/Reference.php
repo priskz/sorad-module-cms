@@ -26,6 +26,6 @@ class Reference extends Responder
 			return Redirect::back();
 		}
 
-		return Redirect::route('content.edit', ['api_context' => $this->getApiContext(), 'uuid' => $payload->getData()->getUuid()]);
+		return Redirect::route('content.edit', ['api_context' => $this->getApiContext(), 'uuid' => $payload->get('uuid')]);
 	}
 }

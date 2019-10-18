@@ -78,6 +78,6 @@ class Service extends GenericEntityService
 			return $processPayload;
 		}
 
-		return $this->aggregate['template']->find($processPayload->getData()['model_type'], $processPayload->getData()['slug']);
+		return $this->aggregate['template']->find($processPayload->get('model_type'), $processPayload->get('slug'));
 	}
 }

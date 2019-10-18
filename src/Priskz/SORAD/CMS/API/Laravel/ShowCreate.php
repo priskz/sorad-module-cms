@@ -30,11 +30,11 @@ class ShowCreate extends Responder
 		{
 			return View::make(Config::get('sorad.cms.view.prefix') . $this->getApiContext(true) . 'content.create-overview')
 				->with('apiContext', $this->getApiContext())
-				->with('templates', $payload->getData());	
+				->with('templates', $payload->getData());
 		}
 
 		return View::make(Config::get('sorad.cms.view.prefix') . $this->getApiContext(true) . 'content.create')
 			->with('apiContext', $this->getApiContext())
-			->with('template', $payload->getData()->first());	
+			->with('template', $payload->getData()->first());
 	}
 }
